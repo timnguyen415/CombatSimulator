@@ -1,0 +1,15 @@
+<html>
+    <head><title>Combat Scene Prototype</title></head>
+    <body>
+        <% if enemy.dead %>
+            You are victorious! Congratulations!<br/>
+            <p><a href="/startover/">Find a New Challenger!</a></p>
+        <% elsif player.dead %>
+            You have been defeated! Better luck next time!<br/>
+            <p><a href="/startover/">Recover and Start Over!</a></p>
+        <% else %>
+            Spiderants have invaded and forced a retreat from both sides. It's a draw.<br/>
+            <p><a href="/startover/">Find a New Challenger!</a></p>
+        <% end %>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+    <head><title>Combat Scene Prototype</title></head>
+    <body>
+        == PLAYER STATS ==<br/>
+        Player Health: <%= player.health %> / <%= player.max_health %><br/>
+        Player Power: <%= player.power %><br/>
+        Player Defense: <%= player.defense %><br/><br/>
+        == ENEMY STATS ==<br/>
+        Enemy Health: <%= enemy.health %> / <%= enemy.max_health %><br/>
+        Enemy Power: <%= enemy.power %><br/>
+        Enemy Defense: <%= enemy.defense %><br/><br/>
+        
+        == PLAYER'S LAST ACTION ==<br/>
+        <% if pact == "attack" %>
+            Player hit the enemy for <%= pdmg %> damage.<br/><br/>
+        <% elsif pact == "defend" %>
+            Player defended against an attack (+3 defense during enemy's turn).<br/><br/>
+        <% elsif pact == "heal" %>
+            Player healed for <%= pheal %> health.<br/><br/>
+        <% end %>
+        
+        == ENEMY'S LAST ACTION ==<br/>
+        <% if eact == "attack" %>
+            Enemy hit the player for <%= edmg %> damage.<br/><br/>
+        <% elsif eact == "defend" %>
+            Enemy is now defending against an attack (+3 defense during player's turn).<br/><br/>
+        <% elsif eact == "heal" %>
+            Enemy healed for <%= eheal %> health.<br/><br/>
+        <% end %>
+        
+        <form action="/player/" method="POST">
+            <input type="submit" value="Continue">
+        </form>
+        
+        <p><a href="/startover/">Forfeit and Start Over!</a></p>
+    </body>
+</html>

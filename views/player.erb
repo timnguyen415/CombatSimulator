@@ -1,0 +1,22 @@
+<html>
+    <head><title>Combat Scene Prototype</title></head>
+    <body>
+        == PLAYER STATS ==<br/>
+        Player Health: <%= player.health %> / <%= player.max_health %><br/>
+        Player Power: <%= player.power %><br/>
+        Player Defense: <%= player.defense %><br/><br/>
+        == ENEMY STATS ==<br/>
+        Enemy Health: <%= enemy.health %> / <%= enemy.max_health %><br/>
+        Enemy Power: <%= enemy.power %><br/>
+        Enemy Defense: <%= enemy.defense %><br/><br/>
+        
+        <form action="/turn/" method="POST">
+            <input type="radio" name="Action" value="a">Attack<br/>
+            <input type="radio" name="Action" value="d">Defend<br/>
+            <input type="radio" name="Action" value="h">Heal<br/>
+            <input type="submit" value="Confirm" />
+        </form>
+        
+        <p><a href="/startover/">Forfeit and Start Over!</a></p>
+    </body>
+</html>
