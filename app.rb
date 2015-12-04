@@ -5,8 +5,6 @@ player = Character.new
 enemy = Character.new
 
 get '/' do
-    enemy.health = 1
-    enemy.defense = 1
     erb :index
 end
 
